@@ -22,11 +22,14 @@ import android.view.Menu;
 import android.widget.TextView;
 import butterknife.InjectView;
 import com.f2prateek.cloak.CloakedActivity;
+import com.squareup.otto.Bus;
 import javax.inject.Inject;
 
 public class SampleActivity extends CloakedActivity {
 
   @Inject PackageInfo packageInfo;
+  @Inject Bus bus;
+
   @InjectView(R.id.textView_info) TextView textView_info;
 
   @Override

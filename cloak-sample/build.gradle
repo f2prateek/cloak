@@ -25,4 +25,5 @@ android {
 
 dependencies {
   compile project(':cloak')
+  compile 'com.squareup:otto:1.3.4'
 }

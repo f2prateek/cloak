@@ -17,16 +17,19 @@
 package com.f2prateek.cloak.sample;
 
 import com.f2prateek.cloak.CloakedApplication;
+import com.squareup.otto.Bus;
 import dagger.Module;
+import dagger.Provides;
 import java.util.ArrayList;
 import java.util.List;
+import javax.inject.Singleton;
 
 public class SampleApplication extends CloakedApplication {
 
   @Override
   protected List<Object> getModules() {
     ArrayList<Object> modules = new ArrayList<Object>(super.getModules());
-    modules.add(new InjectionPointsModule());
+    modules.add(new SampleModule());
     return modules;
   }
 
@@ -34,9 +37,11 @@ public class SampleApplication extends CloakedApplication {
       injects = {
           SampleActivity.class
       },
-      complete = false,
-      library = true)
-  /** A module to specify all injection points */
-  public class InjectionPointsModule {
+      complete = false)
+  /** App specific module. List all injection points here. */
+  public class SampleModule {
+    @Provides @Singleton Bus provideBus() {
+      return new Bus();
+    }
   }
 }
