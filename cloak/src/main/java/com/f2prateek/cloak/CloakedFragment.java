@@ -18,10 +18,17 @@ package com.f2prateek.cloak;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.view.View;
+import butterknife.Views;
 
 public class CloakedFragment extends Fragment {
   @Override public void onActivityCreated(Bundle savedInstanceState) {
     super.onActivityCreated(savedInstanceState);
     ((CloakedActivity) getActivity()).inject(this);
+  }
+
+  @Override public void onViewCreated(View view, Bundle savedInstanceState) {
+    super.onViewCreated(view, savedInstanceState);
+    Views.inject(this, view);
   }
 }
