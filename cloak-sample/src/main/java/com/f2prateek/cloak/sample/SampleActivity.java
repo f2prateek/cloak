@@ -25,8 +25,6 @@ import com.squareup.otto.Bus;
 import javax.inject.Inject;
 
 /**
- *
- *
  * {@link com.f2prateek.cloak.sample.SampleActivity#packageInfo} is provided by {@link
  * com.f2prateek.cloak.AndroidModule} from the library.
  *
