@@ -24,6 +24,15 @@ import com.f2prateek.cloak.CloakedActivity;
 import com.squareup.otto.Bus;
 import javax.inject.Inject;
 
+/**
+ *
+ *
+ * {@link com.f2prateek.cloak.sample.SampleActivity#packageInfo} is provided by {@link
+ * com.f2prateek.cloak.AndroidModule} from the library.
+ *
+ * {@link com.f2prateek.cloak.sample.SampleActivity#bus} is provided by {@link
+ * com.f2prateek.cloak.sample.SampleApplication.SampleModule} from our own app.
+ */
 public class SampleActivity extends CloakedActivity {
 
   @Inject PackageInfo packageInfo;

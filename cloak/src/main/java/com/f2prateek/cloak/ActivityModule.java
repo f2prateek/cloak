@@ -24,7 +24,8 @@ import javax.inject.Singleton;
 /**
  * This module represents objects which exist only for the scope of a single activity. We can
  * safely create singletons using the activity instance because ths entire object graph will only
- * ever exist inside of that activity.
+ * ever exist inside of that activity. Use this template to provide your own Activity scoped
+ * dependencies.
  */
 @Module(
     complete = false,

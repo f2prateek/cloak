@@ -25,6 +25,17 @@ import dagger.ObjectGraph;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * The Activity class that all your activities should extend from.
+ * This automatically injects itself into {@link com.f2prateek.cloak.CloakedApplication#applicationGraph}
+ * in it's {@link com.f2prateek.cloak.CloakedActivity#onCreate(android.os.Bundle)} method, and sets
+ * up an {@link com.f2prateek.cloak.CloakedActivity#activityGraph} that provides Activity scoped
+ * dependencies.
+ *
+ * To differentiate between {@link android.app.Activity} and {@link android.app.Application} scoped
+ * dependencies, you can use {@link com.f2prateek.cloak.ForActivity} and {@link
+ * com.f2prateek.cloak.ForApplication} to specify where your dependencies should come from.
+ */
 public class CloakedActivity extends FragmentActivity {
 
   private ObjectGraph activityGraph;

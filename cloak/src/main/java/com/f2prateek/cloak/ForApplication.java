@@ -21,6 +21,9 @@ import javax.inject.Qualifier;
 
 import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
+/**
+ * Identifies {@link android.app.Application} scoped dependencies.
+ */
 @Qualifier @Retention(RUNTIME)
 public @interface ForApplication {
 }

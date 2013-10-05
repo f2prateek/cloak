@@ -21,6 +21,14 @@ import dagger.ObjectGraph;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * The application class you should extend from.
+ *
+ * To add your own modules, override {@link CloakedApplication#getModules()}, being sure to include
+ * all modules provided by {@code super.getModules()}.
+ *
+ * At the very minimum, you will need to provide a module that lists all inject points for the app.
+ */
 public class CloakedApplication extends Application {
 
   private ObjectGraph applicationGraph;
