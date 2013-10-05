@@ -16,7 +16,24 @@
 
 package com.f2prateek.cloak.sample;
 
-import com.f2prateek.cloak.CloakedFragment;
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.TextView;
+import butterknife.InjectView;
+import com.squareup.otto.Subscribe;
 
-public class SampleReceiverFragment extends CloakedFragment {
+public class SampleReceiverFragment extends BaseFragment {
+
+  @InjectView(R.id.textView) TextView textView;
+
+  @Override public View onCreateView(LayoutInflater inflater, ViewGroup container,
+      Bundle savedInstanceState) {
+    return inflater.inflate(R.layout.fragment_receiver, container, false);
+  }
+
+  @Subscribe public void onReceivedRandomNumber(RandomNumberEvent randomNumberEvent) {
+    textView.setText(String.valueOf(randomNumberEvent.num));
+  }
 }

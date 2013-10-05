@@ -40,8 +40,13 @@ public class SampleActivity extends CloakedActivity {
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
+    // Dependencies are injected after this call completes
     super.onCreate(savedInstanceState);
+
+    // Views are injected after this call completes
     setContentView(R.layout.activity_main);
+
+    // Use our dependencies
     textView_info.setText(packageInfo.packageName);
   }
 }

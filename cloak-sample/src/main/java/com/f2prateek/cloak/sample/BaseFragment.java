@@ -16,24 +16,26 @@
 
 package com.f2prateek.cloak.sample;
 
-import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Button;
-import butterknife.OnClick;
-import java.util.Random;
+import com.f2prateek.cloak.CloakedFragment;
+import com.squareup.otto.Bus;
+import javax.inject.Inject;
 
-public class SampleSenderFragment extends BaseFragment {
+/**
+ * A Base fragment for this app.
+ *
+ * Sets up for our event bus that can be used to communicate within the app.
+ */
+public class BaseFragment extends CloakedFragment {
 
-  private Random random = new Random();
+  @Inject Bus bus;
 
-  @Override public View onCreateView(LayoutInflater inflater, ViewGroup container,
-      Bundle savedInstanceState) {
-    return inflater.inflate(R.layout.fragment_sender, container, false);
+  @Override public void onResume() {
+    super.onResume();
+    bus.register(this);
   }
 
-  @OnClick(R.id.button_send) void onButtonPressed(Button button) {
-    bus.post(new RandomNumberEvent(random.nextInt()));
+  @Override public void onPause() {
+    super.onPause();
+    bus.unregister(this);
   }
 }

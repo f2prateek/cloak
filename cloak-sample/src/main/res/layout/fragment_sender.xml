@@ -22,9 +22,9 @@
     android:layout_height="match_parent">
 
   <Button
+      android:id="@+id/button_send"
       android:layout_width="fill_parent"
       android:layout_height="wrap_content"
-      android:text="@string/send"
-      android:id="@+id/button"/>
+      android:text="@string/send"/>
 
 </LinearLayout>

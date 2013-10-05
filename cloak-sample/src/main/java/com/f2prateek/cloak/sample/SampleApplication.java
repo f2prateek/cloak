@@ -24,6 +24,12 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.inject.Singleton;
 
+/**
+ * Sample Application class.
+ * All that is required is a module that lists all the injection points for the apps.
+ * This sample goes a bit further to show how you can specify your own dependencies, an event bus in
+ * this case.
+ */
 public class SampleApplication extends CloakedApplication {
 
   @Override
@@ -35,9 +41,8 @@ public class SampleApplication extends CloakedApplication {
 
   @Module(
       injects = {
-          SampleActivity.class
-      },
-      complete = false)
+          SampleActivity.class, SampleReceiverFragment.class, SampleSenderFragment.class
+      }, complete = false)
   /** App specific module. List all injection points here. */
   public class SampleModule {
     @Provides @Singleton Bus provideBus() {
