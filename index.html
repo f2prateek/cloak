@@ -65,6 +65,10 @@
                 <p>As a bonus, this library also sets up for "view injection" with ButterKnife so
                     you never have to use <code>findViewById</code> again.</p>
 
+                <h3 id="usage">Usage</h3>
+                <p>Simply extend your <code>Application</code> class from <code>CloakedApplication</code>, your activities from <code>CloakedActivity</code> and fragments from <code>CloakedFragment</code>.</p>
+                <p>After that, the only requirement is that your application class should provide a module listing all injection points for your app, and your app is good to build.</p>
+
                 <h3 id="download">Download</h3>
                 <pre class="prettyprint">compile 'com.f2prateek.cloak:cloak:<span
                         class="version pln"><em>(insert latest version)</em></span>'</pre>
@@ -97,6 +101,7 @@ limitations under the License.</pre>
                 <div class="content-nav" data-spy="affix" data-offset-top="80">
                     <ul class="nav nav-tabs nav-stacked primary">
                         <li><a href="#introduction">Introduction</a></li>
+                        <li><a href="#usage">Usage</a></li>
                         <li><a href="#download">Download</a></li>
                         <li><a href="#contributing">Contributing</a></li>
                         <li><a href="#license">License</a></li>
