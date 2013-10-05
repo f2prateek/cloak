@@ -1,78 +1,85 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="viewport" content="width=640" />
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Cloak</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+          content="A library to facilitate the use of Dagger in your Android app">
+    <link href="static/bootstrap-combined.min.css" rel="stylesheet">
+    <link href="static/app.css" rel="stylesheet">
+    <link href="static/app-theme.css" rel="stylesheet">
+    <link href="http://fonts.googleapis.com/css?family=Roboto:400,300italic,100,100italic,300"
+          rel="stylesheet" type="text/css">
+    <!--[if lt IE 9]>
+    <script src="static/html5shiv.min.js"></script><![endif]-->
+</head>
+<body data-target=".content-nav">
+<header>
+    <div class="container">
+        <div class="row">
+            <div class="span5">
+                <h1>Cloak</h1>
+            </div>
+            <div class="span7">
+                <menu>
+                    <ul>
+                        <li><a href="#download" class="menu download">Download <span
+                                class="version-tag">Latest</span></a></li>
+                        <li><a href="http://github.com/f2prateek/android-cloak"
+                               data-title="View GitHub Project" class="menu github"><img
+                                src="static/icon-github.png" alt="GitHub"/></a></li>
+                    </ul>
+                </menu>
+            </div>
+        </div>
+</header>
+<section id="subtitle">
+    <div class="container">
+        <div class="row">
+            <div class="span12">
+                <h2>A library to facilitate the use of <strong>Dagger</strong> in your Android app
+                </h2>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="body">
+    <div class="container">
+        <div class="row">
+            <div class="span9">
+                <h3 id="introduction">Introduction</h3>
 
-    <link rel="stylesheet" href="stylesheets/core.css" media="screen"/>
-    <link rel="stylesheet" href="stylesheets/mobile.css" media="handheld, only screen and (max-device-width:640px)"/>
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css"/>
+                <p>Dependency injection allows the removal of hard-coded dependencies and makes it
+                    possible to change them, whether at run-time or compile-time.</p>
 
-    <script type="text/javascript" src="javascripts/modernizr.js"></script>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <script type="text/javascript" src="javascripts/headsmart.min.js"></script>
-    <script type="text/javascript">
-      $(document).ready(function () {
-        $('#main_content').headsmart()
-      })
-    </script>
-    <title>Android-cloak by f2prateek</title>
-  </head>
+                <p>Traditionally, Guice has been the go-to library for dependency injection, with
+                    RoboGuice helping "guice" your Android apps. Dagger is a new dependency injector
+                    specfically optimized for Android and interactive Java apps. In particular, it
+                    reduces the overhead required by Guice at startup.</p>
 
-  <body>
-    <a id="forkme_banner" href="https://github.com/f2prateek/android-cloak">View on GitHub</a>
-    <div class="shell">
+                <p>This library eliminates some of the boilerplate required to wire your Dagger app.
+                    All that is switching your imports, and providing a module listing all your
+                    <code>@Inject</code> points.</p>
 
-      <header>
-        <span class="ribbon-outer">
-          <span class="ribbon-inner">
-            <h1>Android-cloak</h1>
-            <h2>When using dagger, don't leave your cloak.</h2>
-          </span>
-          <span class="left-tail"></span>
-          <span class="right-tail"></span>
-        </span>
-      </header>
+                <p>As a bonus, this library also sets up for "view injection" with ButterKnife so
+                    you never have to use <code>findViewById</code> again.</p>
 
-      <section id="downloads">
-        <span class="inner">
-          <a href="https://github.com/f2prateek/android-cloak/zipball/master" class="zip"><em>download</em> .ZIP</a><a href="https://github.com/f2prateek/android-cloak/tarball/master" class="tgz"><em>download</em> .TGZ</a>
-        </span>
-      </section>
+                <h3 id="download">Download</h3>
+                <pre class="prettyprint">compile 'com.f2prateek.cloak:cloak:<span
+                        class="version pln"><em>(insert latest version)</em></span>'</pre>
 
+                <h3 id="contributing">Contributing</h3>
 
-      <span class="banner-fix"></span>
+                <p>If you would like to contribute code you can do so through GitHub by forking the
+                    repository and sending a pull request.</p>
 
+                <p>When submitting code, please make every effort to follow existing conventions and
+                    style in order to keep the code as readable as possible. Please also make sure
+                    your code compiles by running <code>gradle assemble</code>.</p>
 
-      <section id="main_content">
-        <h1>
-<a name="cloak" class="anchor" href="#cloak"><span class="octicon octicon-link"></span></a>Cloak</h1>
-
-<p>A library to facilitate the use of Dagger in your Android app.
-Also sets up ButterKnife for "view injection".</p>
-
-<p>For more information please see <a href="http://f2prateek.com/android-cloak/">the website</a>.</p>
-
-<h2>
-<a name="download" class="anchor" href="#download"><span class="octicon octicon-link"></span></a>Download</h2>
-
-<p>Download <a href="http://repository.sonatype.org/service/local/artifact/maven/redirect?r=central-proxy&amp;g=com.f2prateek.cloak&amp;a=cloak&amp;v=LATEST">the latest JAR</a> or grab via Maven or Gradle:</p>
-
-<div class="highlight highlight-xml"><pre><span class="nt">&lt;dependency&gt;</span>
-    <span class="nt">&lt;groupId&gt;</span>com.f2prateek.cloak<span class="nt">&lt;/groupId&gt;</span>
-    <span class="nt">&lt;artifactId&gt;</span>cloak<span class="nt">&lt;/artifactId&gt;</span>
-    <span class="nt">&lt;version&gt;</span>(insert latest version)<span class="nt">&lt;/version&gt;</span>
-<span class="nt">&lt;/dependency&gt;</span>
-</pre></div>
-
-<div class="highlight highlight-groovy"><pre><span class="n">compile</span> <span class="s1">'com.f2prateek.cloak:cloak:(insert latest version)'</span>
-</pre></div>
-
-<h2>
-<a name="license" class="anchor" href="#license"><span class="octicon octicon-link"></span></a>License</h2>
-
-<pre><code>Copyright 2013 Prateek Srivastava (@f2prateek)
+                <h3 id="license">License</h3>
+            <pre>Copyright 2013 Prateek Srivastava (@f2prateek)
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -84,24 +91,59 @@ Unless required by applicable law or agreed to in writing, software
 distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
-limitations under the License.
-</code></pre>
-      </section>
-
-      <footer>
-        <span class="ribbon-outer">
-          <span class="ribbon-inner">
-            <p>this project by <a href="https://github.com/f2prateek">f2prateek</a> can be found on <a href="https://github.com/f2prateek/android-cloak">GitHub</a></p>
-          </span>
-          <span class="left-tail"></span>
-          <span class="right-tail"></span>
-        </span>
-        <p>Generated with <a href="http://pages.github.com">GitHub Pages</a> using Merlot</p>
-        <span class="octocat"></span>
-      </footer>
-
+limitations under the License.</pre>
+            </div>
+            <div class="span3">
+                <div class="content-nav" data-spy="affix" data-offset-top="80">
+                    <ul class="nav nav-tabs nav-stacked primary">
+                        <li><a href="#introduction">Introduction</a></li>
+                        <li><a href="#download">Download</a></li>
+                        <li><a href="#contributing">Contributing</a></li>
+                        <li><a href="#license">License</a></li>
+                    </ul>
+                    <ul class="nav nav-pills nav-stacked secondary">
+                        <li><a href="javadoc/index.html">Javadoc</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
+</section>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="static/bootstrap.min.js"></script>
+<script src="static/jquery.smooth-scroll.min.js"></script>
+<script src="static/jquery-maven-artifact.min.js"></script>
+<script src="static/prettify.js"></script>
+<script type="text/javascript">
+      $(function() {
+        // Syntax highlight code blocks.
+        prettyPrint();
 
-    
-  </body>
+        // Spy on scroll position for real-time updating of current section.
+        $('body').scrollspy();
+        
+        // Use smooth-scroll for internal links.
+        $('a').smoothScroll();
+
+        // Enable tooltips on the header nav image items.
+        $('.menu').tooltip({
+          placement: 'bottom',
+          trigger: 'hover',
+          container: 'body',
+          delay: {
+            show: 500,
+            hide: 0
+          }
+        });
+
+        // Look up the latest version of the library.
+        $.fn.artifactVersion('com.f2prateek.cloak', 'cloak', function(version, url) {
+          $('.version').text(version);
+          $('.version-tag').text('v' + version);
+          $('.version-href').attr('href', url);
+        });
+      });
+
+</script>
+</body>
 </html>
