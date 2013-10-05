@@ -18,7 +18,6 @@ package com.f2prateek.cloak.sample;
 
 import android.content.pm.PackageInfo;
 import android.os.Bundle;
-import android.view.Menu;
 import android.widget.TextView;
 import butterknife.InjectView;
 import com.f2prateek.cloak.CloakedActivity;
@@ -37,12 +36,5 @@ public class SampleActivity extends CloakedActivity {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
     textView_info.setText(packageInfo.packageName);
-  }
-
-  @Override
-  public boolean onCreateOptionsMenu(Menu menu) {
-    // Inflate the menu; this adds items to the action bar if it is present.
-    getMenuInflater().inflate(R.menu.main, menu);
-    return true;
   }
 }
