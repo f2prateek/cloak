@@ -36,6 +36,9 @@ public class CloakedApplication extends Application {
   @Override public void onCreate() {
     super.onCreate();
     applicationGraph = ObjectGraph.create(getModules().toArray());
+
+    // Inject ourselves so subclasses will have dependencies fulfilled when this method returns.
+    applicationGraph.inject(this);
   }
 
   /**
@@ -46,6 +49,11 @@ public class CloakedApplication extends Application {
     return Arrays.<Object>asList(new AndroidModule(this));
   }
 
+  /**
+   * Get the {@link dagger.ObjectGraph} for this application.
+   *
+   * @return {@link #applicationGraph}
+   */
   ObjectGraph getApplicationGraph() {
     return applicationGraph;
   }

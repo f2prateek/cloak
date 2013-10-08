@@ -27,7 +27,8 @@ import butterknife.Views;
  * com.f2prateek.cloak.CloakedFragment#onActivityCreated(android.os.Bundle)} method.
  *
  * Views can be injected after a call to {@link com.f2prateek.cloak.CloakedFragment#onViewCreated(android.view.View,
- * android.os.Bundle)}.
+ * android.os.Bundle)}. Be sure to supply your own view in {@link com.f2prateek.cloak.CloakedFragment#onCreateView(android.view.LayoutInflater,
+ * android.view.ViewGroup, android.os.Bundle)}.
  */
 public class CloakedFragment extends Fragment {
   @Override public void onActivityCreated(Bundle savedInstanceState) {

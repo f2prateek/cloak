@@ -29,7 +29,6 @@ import javax.inject.Singleton;
 
 /**
  * Module for all Android related provisions.
- * Shows a sample of how you can provide Application scoped depdencies.
  */
 @Module(
     complete = false,
