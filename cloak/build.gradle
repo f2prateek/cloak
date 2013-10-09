@@ -1,17 +1,4 @@
-buildscript {
-  repositories {
-    mavenCentral()
-  }
-  dependencies {
-    classpath 'com.android.tools.build:gradle:0.5.+'
-  }
-}
-
 apply plugin: 'android-library'
-
-repositories {
-  mavenCentral()
-}
 
 android {
   compileSdkVersion 18
@@ -20,8 +7,13 @@ android {
   defaultConfig {
     minSdkVersion 7
     targetSdkVersion 18
+
+    versionName project.VERSION_NAME
+    versionCode Integer.parseInt(project.VERSION_CODE)
   }
 }
+
+apply from: '../maven_push.gradle'
 
 dependencies {
   compile 'com.android.support:support-v4:13.0.0'
