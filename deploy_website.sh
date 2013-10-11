@@ -3,7 +3,7 @@
 set -ex
 
 REPO="git@github.com:f2prateek/android-cloak.git"
-GROUP_ID="com.f2prateek.android-cloak"
+GROUP_ID="com.f2prateek.cloak"
 ARTIFACT_ID="cloak"
 
 DIR=temp-clone
