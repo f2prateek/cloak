@@ -1,154 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="utf-8">
-    <title>Cloak</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-          content="A library to facilitate the use of Dagger in your Android app">
-    <link href="static/bootstrap-combined.min.css" rel="stylesheet">
-    <link href="static/app.css" rel="stylesheet">
-    <link href="static/app-theme.css" rel="stylesheet">
-    <link href="http://fonts.googleapis.com/css?family=Roboto:400,300italic,100,100italic,300"
-          rel="stylesheet" type="text/css">
-    <!--[if lt IE 9]>
-    <script src="static/html5shiv.min.js"></script><![endif]-->
-</head>
-<body data-target=".content-nav">
-<header>
-    <div class="container">
-        <div class="row">
-            <div class="span5">
-                <h1>Cloak</h1>
-            </div>
-            <div class="span7">
-                <menu>
-                    <ul>
-                        <li><a href="#download" class="menu download">Download <span
-                                class="version-tag">Latest</span></a></li>
-                        <li><a href="http://github.com/f2prateek/android-cloak"
-                               data-title="View GitHub Project" class="menu github"><img
-                                src="static/icon-github.png" alt="GitHub"/></a></li>
-                    </ul>
-                </menu>
-            </div>
-        </div>
-</header>
-<section id="subtitle">
-    <div class="container">
-        <div class="row">
-            <div class="span12">
-                <h2>A library to facilitate the use of <strong>Dagger</strong> in your Android app
-                </h2>
-            </div>
-        </div>
-    </div>
-</section>
-<section id="body">
-    <div class="container">
-        <div class="row">
-            <div class="span9">
-                <h3 id="introduction">Introduction</h3>
-
-                <p>Dependency injection allows the removal of hard-coded dependencies and makes it
-                    possible to change them, whether at run-time or compile-time.</p>
-
-                <p>Traditionally, Guice has been the go-to library for dependency injection, with
-                    RoboGuice helping "guice" your Android apps. Dagger is a new dependency injector
-                    specfically optimized for Android and interactive Java apps. In particular, it
-                    reduces the overhead required by Guice at startup.</p>
-
-                <p>This library eliminates some of the boilerplate required to wire your Dagger app.
-                    All that is switching your imports, and providing a module listing all your
-                    <code>@Inject</code> points.</p>
-
-                <p>As a bonus, this library also sets up for "view injection" with ButterKnife so
-                    you never have to use <code>findViewById</code> again.</p>
-
-                <h3 id="usage">Usage</h3>
-                <p>Simply extend your <code>Application</code> class from <code>CloakedApplication</code>, your activities from <code>CloakedActivity</code> and fragments from <code>CloakedFragment</code>.</p>
-                <p>After that, the only requirement is that your application class should provide a module listing all injection points for your app, and your app is good to build.</p>
-
-                <h3 id="download">Download</h3>
-                <pre class="prettyprint">compile 'com.f2prateek.cloak:cloak:<span
-                        class="version pln"><em>(insert latest version)</em></span>'</pre>
-
-                <h3 id="contributing">Contributing</h3>
-
-                <p>If you would like to contribute code you can do so through GitHub by forking the
-                    repository and sending a pull request.</p>
-
-                <p>When submitting code, please make every effort to follow existing conventions and
-                    style in order to keep the code as readable as possible. Please also make sure
-                    your code compiles by running <code>gradle assemble</code>.</p>
-
-                <h3 id="license">License</h3>
-            <pre>Copyright 2013 Prateek Srivastava (@f2prateek)
+    <head>
+        <meta charset="utf-8">
+        <title>Cloak</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description"
+              content="A library to facilitate the use of Dagger in your Android app">
+        <link href="static/bootstrap-combined.min.css" rel="stylesheet">
+        <link href="static/app.css" rel="stylesheet">
+        <link href="static/app-theme.css" rel="stylesheet">
+        <link href="http://fonts.googleapis.com/css?family=Roboto:400,300italic,100,100italic,300"
+              rel="stylesheet" type="text/css">
+        <!--[if lt IE 9]>
+<script src="static/html5shiv.min.js"></script><![endif]-->
+    </head>
+    <body data-target=".content-nav">
+        <header>
+            <div class="container">
+                <div class="row">
+                    <div class="span5">
+                        <h1>Cloak</h1>
+                    </div>
+                    <div class="span7">
+                        <menu>
+                            <ul>
+                                <li><a href="#download" class="menu download">Download <span
+                                                                                             class="version-tag">Latest</span></a></li>
+                                <li><a href="http://github.com/f2prateek/android-cloak"
+                                       data-title="View GitHub Project" class="menu github"><img
+                                                                                                 src="static/icon-github.png" alt="GitHub"/></a></li>
+                            </ul>
+                        </menu>
+                    </div>
+                </div>
+            </header>
+            <section id="subtitle">
+                <div class="container">
+                    <div class="row">
+                        <div class="span12">
+                            <h2>A library to bootstrap the use of <strong>Dagger</strong> in your Android app
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="body">
+                <div class="container">
+                    <div class="row">
+                        <div class="span9">
+                            <h3 id="introduction">Introduction</h3>
+                            
+                            <p>Dependency injection allows the removal of hard-coded dependencies and makes it possible to change them, whether at run-time or compile-time.</p>
+                            
+                            <p>Traditionally <a href="https://code.google.com/p/google-guice/">Guice</a> has been the go-to library for dependency injection, with <a href="https://github.com/roboguice/roboguice">RoboGuice</a> bringing this functionality to Android. <a href="https://github.com/square/dagger">Dagger</a> is a new dependency injector specfically optimized for Android and interactive Java apps. In particular, it reduces the overhead required by Guice at startup.</p>
+                            
+                            <p>This library eliminates some of the boilerplate required to wire your Dagger app. For a minal working app, all that is required is to switch your imports to the corresponding classes provided, and provide a module listing all your <code>@Inject</code> points. To see a working sample, look in the <code>cloak-sample</code> folder at the root of the project.</p>
+                            
+                            <p>This library also sets up for "view injection" with <a href="https://github.com/JakeWharton/butterknife">ButterKnide</a> so you never have to call <code>findViewById</code> again.</p>
+                            
+                            <h3 id="usage">Usage</h3>
+                            <p>Simply switch your imports so that your <code>Application</code> class extends from <code>CloakedApplication</code>, your activities extend from <code>CloakedActivity</code> and fragments extend from <code>CloakedFragment</code>. Your application class <strong>must</strong> provide a module to the <code>applicationGraph</code> listing all injection points for your app.</p>
+                            <p>To see a working sample, look in the <code>cloak-sample</code> folder at the root of the project.</p>
+                            
+                            <h3 id="download">Download</h3>
+                            <pre class="prettyprint">compile 'com.f2prateek.cloak:cloak:<span
+class="version pln"><em>(insert latest version)</em></span>'</pre>
+                            
+                            <h3 id="contributing">Contributing</h3>
+                            
+                            <p>If you would like to contribute code you can do so through GitHub by forking the repository and sending a pull request.</p>
+                            
+                            <p>When submitting code, please make every effort to follow existing conventions and style in order to keep the code as readable as possible. Please also make sure your code compiles by running <code>gradle assemble</code>.</p>
+                            
+                            <h3 id="license">License</h3>
+                            <pre>Copyright 2013 Prateek Srivastava (@f2prateek)
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
 
-   http://www.apache.org/licenses/LICENSE-2.0
+http://www.apache.org/licenses/LICENSE-2.0
 
 Unless required by applicable law or agreed to in writing, software
 distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.</pre>
-            </div>
-            <div class="span3">
-                <div class="content-nav" data-spy="affix" data-offset-top="80">
-                    <ul class="nav nav-tabs nav-stacked primary">
-                        <li><a href="#introduction">Introduction</a></li>
-                        <li><a href="#usage">Usage</a></li>
-                        <li><a href="#download">Download</a></li>
-                        <li><a href="#contributing">Contributing</a></li>
-                        <li><a href="#license">License</a></li>
-                    </ul>
-                    <ul class="nav nav-pills nav-stacked secondary">
-                        <li><a href="javadoc/index.html">Javadoc</a></li>
-                    </ul>
+                        </div>
+                        <div class="span3">
+                            <div class="content-nav" data-spy="affix" data-offset-top="80">
+                                <ul class="nav nav-tabs nav-stacked primary">
+                                    <li><a href="#introduction">Introduction</a></li>
+                                    <li><a href="#usage">Usage</a></li>
+                                    <li><a href="#download">Download</a></li>
+                                    <li><a href="#contributing">Contributing</a></li>
+                                    <li><a href="#license">License</a></li>
+                                </ul>
+                                <ul class="nav nav-pills nav-stacked secondary">
+                                    <li><a href="javadoc/index.html">Javadoc</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-    </div>
-</section>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script src="static/bootstrap.min.js"></script>
-<script src="static/jquery.smooth-scroll.min.js"></script>
-<script src="static/jquery-maven-artifact.min.js"></script>
-<script src="static/prettify.js"></script>
-<script type="text/javascript">
-      $(function() {
-        // Syntax highlight code blocks.
-        prettyPrint();
-
-        // Spy on scroll position for real-time updating of current section.
-        $('body').scrollspy();
-        
-        // Use smooth-scroll for internal links.
-        $('a').smoothScroll();
-
-        // Enable tooltips on the header nav image items.
-        $('.menu').tooltip({
-          placement: 'bottom',
-          trigger: 'hover',
-          container: 'body',
-          delay: {
-            show: 500,
-            hide: 0
-          }
-        });
-
-        // Look up the latest version of the library.
-        $.fn.artifactVersion('com.f2prateek.cloak', 'cloak', function(version, url) {
-          $('.version').text(version);
-          $('.version-tag').text('v' + version);
-          $('.version-href').attr('href', url);
-        });
-      });
-
-</script>
-</body>
-</html>
+            </section>
+            <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+            <script src="static/bootstrap.min.js"></script>
+            <script src="static/jquery.smooth-scroll.min.js"></script>
+            <script src="static/jquery-maven-artifact.min.js"></script>
+            <script src="static/prettify.js"></script>
+            <script type="text/javascript">
+                $(function() {
+                    // Syntax highlight code blocks.
+                    prettyPrint();
+                    
+                    // Spy on scroll position for real-time updating of current section.
+                    $('body').scrollspy();
+                    
+                    // Use smooth-scroll for internal links.
+                    $('a').smoothScroll();
+                    
+                    // Enable tooltips on the header nav image items.
+                    $('.menu').tooltip({
+                        placement: 'bottom',
+                        trigger: 'hover',
+                        container: 'body',
+                        delay: {
+                            show: 500,
+                            hide: 0
+                        }
+                    });
+                    
+                    // Look up the latest version of the library.
+                    $.fn.artifactVersion('com.f2prateek.cloak', 'cloak', function(version, url) {
+                        $('.version').text(version);
+                        $('.version-tag').text('v' + version);
+                        $('.version-href').attr('href', url);
+                    });
+                });
+                
+            </script>
+        </body>
+    </html>
+    
