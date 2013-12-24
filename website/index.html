@@ -54,9 +54,9 @@
                             
                             <p>Traditionally <a href="https://code.google.com/p/google-guice/">Guice</a> has been the go-to library for dependency injection, with <a href="https://github.com/roboguice/roboguice">RoboGuice</a> bringing this functionality to Android. <a href="https://github.com/square/dagger">Dagger</a> is a new dependency injector specfically optimized for Android and interactive Java apps. In particular, it reduces the overhead required by Guice at startup.</p>
                             
-                            <p>This library eliminates some of the boilerplate required to wire your Dagger app. For a minal working app, all that is required is to switch your imports to the corresponding classes provided, and provide a module listing all your <code>@Inject</code> points. To see a working sample, look in the <code>cloak-sample</code> folder at the root of the project.</p>
+                            <p>This library eliminates some of the boilerplate required to wire your Dagger app. For a minimal working app, all that is required is to switch your imports to the corresponding classes provided, and provide a module listing all your <code>@Inject</code> points. To see a working sample, look in the <code>cloak-sample</code> folder at the root of the project.</p>
                             
-                            <p>This library also sets up for "view injection" with <a href="https://github.com/JakeWharton/butterknife">ButterKnide</a> so you never have to call <code>findViewById</code> again.</p>
+                            <p>This library also sets up for "view injection" with <a href="https://github.com/JakeWharton/butterknife">ButterKnife</a> so you never have to call <code>findViewById</code> again.</p>
                             
                             <h3 id="usage">Usage</h3>
                             <p>Simply switch your imports so that your <code>Application</code> class extends from <code>CloakedApplication</code>, your activities extend from <code>CloakedActivity</code> and fragments extend from <code>CloakedFragment</code>. Your application class <strong>must</strong> provide a module to the <code>applicationGraph</code> listing all injection points for your app.</p>
